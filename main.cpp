@@ -293,11 +293,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		directXinit->GetcmdList()->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 		
 		testObj.Draw(directXinit->GetcmdList(), PipeLineRuleFlag, ChangeSquareFlag);
-		
-		if (directXinit->GetScreenImage()->GetImage(0,0,0) != nullptr)
-		{
-			charactorObj.SRVmake(directXinit->Getdev(), directXinit->GetScreenImage());
-		}
 
 		charactorObj.Draw(directXinit->GetcmdList(), PipeLineRuleFlag, ChangeSquareFlag);
 		

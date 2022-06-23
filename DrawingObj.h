@@ -124,8 +124,7 @@ public:
 	void constBuffColorUpdata(float Red,float Green,float Blue);
 	void constBuffPosMUpdata(float X,float Y,float Z);
 
-	//
-	void SRVmake(ID3D12Device* dev, ScratchImage* image);
+	
 
 private:
 
