@@ -332,9 +332,11 @@ void DirectXInit::DrawEnd()
 	ID3D12CommandList* cmdLists[] = { cmdList };
 	cmdQueue->ExecuteCommandLists(1, cmdLists);
 
+	//バックバッファを画像データとして取得(ScratchImage型)
 	result = CaptureTexture(cmdQueue, backBuffers[swapchain->GetCurrentBackBufferIndex()], false, imagescrreen);
 
-	result = SaveToWICFile(*imagescrreen.GetImage(0, 0, 0), WIC_FLAGS_NONE, GetWICCodec(WIC_CODEC_PNG), L"NEW_IMAGE3.PNG");
+	//画像を保存(危険なのでコメントアウト)実行するならここを元に戻すととられます
+	//result = SaveToWICFile(*imagescrreen.GetImage(0, 0, 0), WIC_FLAGS_NONE, GetWICCodec(WIC_CODEC_PNG), L"NEW_IMAGE3.PNG");
 
 
 	//画面に表示するバッファをフリップ(裏表の入れ替え)
